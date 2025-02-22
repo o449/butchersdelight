@@ -1,0 +1,48 @@
+package com.example.butchersdelight;
+
+import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
+
+public class ButchersDelight implements ModInitializer {
+    public static final String MOD_ID = "butchersdelight";
+    
+    // Meat Hook Block (To be implemented later)
+    // Roasting System (To be implemented later)
+    // Carcass Processing (To be implemented later)
+    
+    // Example Custom Item: Raw Meat
+    public static final Item RAW_MEAT = new Item(new FabricItemSettings().group(ItemGroup.FOOD));
+    
+    @Override
+    public void onInitialize() {
+        // Register Items
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "raw_meat"), RAW_MEAT);
+    }
+}
+
+// Fabric Mod Metadata (fabric.mod.json)
+{
+  "schemaVersion": 1,
+  "id": "butchersdelight",
+  "version": "1.0.0",
+  "name": "Butcher's Delight",
+  "description": "A Fabric mod that introduces meat processing mechanics.",
+  "authors": [ "YourName" ],
+  "contact": {
+    "homepage": "https://yourmodpage.com",
+    "sources": "https://github.com/yourgithubrepo"
+  },
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": [ "com.example.butchersdelight.ButchersDelight" ]
+  },
+  "depends": {
+    "fabricloader": ">=0.12.12",
+    "minecraft": "1.20.1"
+  }
+}
